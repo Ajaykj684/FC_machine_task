@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./screens/HomePage";
 import ListPage from "./screens/ListPage";
+// import HolidayDetailPage from "./screens/HolidayDetailPage";
 import './App.css'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<ListPage />} />
+        {/* <Route path="/holiday-detail" element={<HolidayDetailPage />} /> */}
       </Routes>
     </Router>
   );
