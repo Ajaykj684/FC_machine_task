@@ -35,15 +35,20 @@ Make sure you have the following installed:
 
    venv/Scripts/activate
 
-5. Install all required packages from requirements.txt
+5. Create a .env file and add these lines.
+
+   CALENDARIFIC_API_KEY=''
+   CALENDARIFIC_URL='https://calendarific.com/api/v2/holidays'
+
+6. Install all required packages from requirements.txt
    
    pip install -r .\requirement.text
 
-6. Migrate
+7. Migrate
     
    python manage.py migrate
 
-7. Run project.
+8. Run project.
 
    python manage.py runserver.
 

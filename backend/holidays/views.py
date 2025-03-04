@@ -15,7 +15,6 @@ from decouple import config, Csv
     )
 class HolidayListView(APIView):
     def get(self, request, country, year):
-        print(country, year, "///")
         cache_key = f"holidays_{country}_{year}"
         cached_data = cache.get(cache_key)
 
