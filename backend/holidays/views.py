@@ -60,8 +60,8 @@ class SearchHolidayView(APIView):
 
 
 @extend_schema(
-        summary="Get holidays for a specific country and year",
-        description="Fetches public holidays for the given country and year from Calendarific API.",
+        summary="Get holidays for a specific by choosing from calender",
+        description="Fetches public holidays for the given by day from Calendarific API.",
         parameters=[],
         responses={200: "List of holidays"}
     )
