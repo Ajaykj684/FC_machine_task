@@ -50,12 +50,12 @@ class HolidayListView(APIView):
         responses={200: "Filtered list of holidays"}
     )
 class SearchHolidayView(APIView):
-    def get(self, request, country, year, name):
+    def get(self, request, country, year, searchTerm):
         cache_key = f"holidays_{country}_{year}"
         holidays = cache.get(cache_key)
 
         if not holidays:
             return Response({"error": "No data available. Fetch holidays first."}, status=400)
 
-        filtered_holidays = [h for h in holidays if name.lower() in h["name"].lower()]
+        filtered_holidays = [h for h in holidays if searchTerm.lower() in h["name"].lower()]
         return Response(filtered_holidays)

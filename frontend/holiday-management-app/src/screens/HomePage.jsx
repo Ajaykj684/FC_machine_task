@@ -21,11 +21,10 @@ const HomePage = () => {
 
     try {
       const data = await fetchHolidays(country, year);
-      console.log(data);
-
+      
       navigate("/list", {
-       state: { holidays: data, country, year },
-     });
+        state: { holidays: data, country, year },
+      });
      
     } catch (error) {
       setError(error.message); 
@@ -36,15 +35,15 @@ const HomePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen p-6">
-      <h1 className="text-2xl font-bold mb-4">Search Holidays</h1>
+    <div className="flex flex-col items-center justify-center h-screen w-screen p-6">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-center">Search Holidays</h1>
       
-      {error && <div className="text-red-500 mb-2">{error}</div>}
+      {error && <div className="text-red-500 mb-2 text-center">{error}</div>}
 
       <input
         type="text"
         placeholder="Country Code (e.g., US)"
-        className="border p-2 w-64 mb-2 rounded"
+        className="border p-2 w-full sm:w-64 mb-2 rounded"
         value={country}
         onChange={(e) => setCountry(e.target.value)}
         required
@@ -52,8 +51,8 @@ const HomePage = () => {
       
       <input
         type="number"
-        placeholder="Year (e.g., 2024)"
-        className="border p-2 w-64 mb-4 rounded"
+        placeholder="Year (e.g., 2025)"
+        className="border p-2 w-full sm:w-64 mb-4 rounded"
         value={year}
         onChange={(e) => setYear(e.target.value)}
         required
@@ -61,7 +60,7 @@ const HomePage = () => {
       
       <button
         onClick={handleSubmit}
-        className="bg-blue-500 text-white px-6 py-2 rounded"
+        className="bg-blue-500 text-white px-6 py-2 rounded w-full sm:w-auto"
         disabled={loading}
       >
         {loading ? "Loading..." : "Search"}
