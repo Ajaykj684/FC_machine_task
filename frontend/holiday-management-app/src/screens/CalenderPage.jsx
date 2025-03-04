@@ -43,6 +43,7 @@ const CalendarPage = () => {
           <option value="GB">United Kingdom</option>
           <option value="CA">Canada</option>
           <option value="AU">Australia</option>
+          
         </select>
 
         <h2 className="text-xl font-bold mb-2  text-white">Select a Date</h2>

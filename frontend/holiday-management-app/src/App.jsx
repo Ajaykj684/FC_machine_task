@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<ListPage />} />
-        <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/calendar" element={<CalendarPage/>} />
       </Routes>
     </Router>
   );
