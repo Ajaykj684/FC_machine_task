@@ -29,3 +29,17 @@ export const searchInHolidays = async ({country, year, searchTerm}) => {
    return [];
  }
 };
+
+
+export const fetchHolidaysByDate = async (country, year, month, day) => {
+
+ try {
+  
+   const response = await axios.get(`${BASE_URL}/holidays/holiday_by_date/${country}/${year}/${month}/${day}`);
+   return response.data;
+  
+ } catch (error) {
+   console.error("Error fetching holidays:", error);
+   return [];
+ }
+};
