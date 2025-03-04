@@ -14,7 +14,6 @@ from decouple import config, Csv
         responses={200: "List of holidays"}
     )
 class HolidayListView(APIView):
-    print("inmside")
     def get(self, request, country, year):
         print(country, year, "///")
         cache_key = f"holidays_{country}_{year}"
@@ -34,7 +33,6 @@ class HolidayListView(APIView):
 
         if response.status_code == 200:
             data = response.json()
-            print(data, "///////")
             holidays = data.get("response", {}).get("holidays", [])
             cache.set(cache_key, holidays, timeout=3 * 24 * 60 * 60) # cached for 3 days.
             return Response(holidays)
