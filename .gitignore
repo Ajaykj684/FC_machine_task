@@ -7,7 +7,7 @@ __pycache__/
 *.so
 .env
 ./env
-../env
+./backend/.env
 
 .vscode
 venv
